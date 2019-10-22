@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Front End Challenge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  </head>
+  <body>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <section id="internship_signup" class="fc-internship-signup">
+      <div class="fc-internship-signup-container">
+        <h1 class="fc-heading-flair">Internship signup form</h1>
+        <div class="fc-intership-copy">
+          <p>Prepare for your career with a project Management, Web-Development, Graphic design, or Digital Marketing Internship at Northern.</p>
+        </div>
+        <form id="intern_form">
+          <div class="fc-form-container flex flex-row flex-wrap flex-space-between">
+            <div class="fc-form-group fc-form-group-half">
+              <input id="email" name="email" type="email" placeholder="Your Email Address*">
+            </div>
+            <div class="fc-form-group fc-form-group-half">
+              <select id="interests" name="interests" required>
+              <option value="" disabled selected hidden>Your Interests</option>
+              <option value="development">Development</option>
+              <option value="design">Design</option>
+              <option value="management">Management</option>
+              <option value="marketing">Marketing</option>
+              </select>
+            </div>
+            <div class="fc-form-group fc-form-group-full">
+              <button id="btnSubmit" type="submit" class="fc-base-btn fc-red-btn">Sign Up Now <span class="fc-arrow-icon-right"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

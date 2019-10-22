@@ -1,0 +1,364 @@
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Montserrat:700&display=swap');
+
+// Varaibles
+$black: #000;
+$white: #fff;
+$fc-dark-grey: #282828;
+$fc-light-grey: #797979;
+$fc-red: #D02035;
+
+$main-font: 'Merriweather', serif;
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+// Flex Box
+.flex {
+  display: flex;
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  &-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  &-row {
+    flex-direction: row;
+  }
+
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-column {
+    flex-direction: column;
+  }
+
+  &-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-space-between {
+    justify-content: space-between;
+  }
+
+  &-space-around {
+    justify-content: space-around;
+  }
+
+  &-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &-hor-start {
+    justify-content: flex-start;
+  }
+
+  &-hor-end {
+    justify-content: flex-end;
+  }
+
+  &-vert-start {
+    align-items: flex-start;
+  }
+
+  &-vert-end {
+    align-items: flex-end;
+  }
+
+  &-stretch {
+    align-items: stretch;
+  }
+
+  &-baseline {
+    align-items: baseline;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+// Scaffolding
+.fc-internship-signup {
+  background-color: $fc-dark-grey;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 1px;
+
+  @media (min-width: 992px) {
+    padding-top: 150px;
+  }
+}
+
+.fc-internship-signup-container {
+  margin: 0 auto;
+  width: 992px;
+
+  @media (max-width: 992px) {
+    width: 95%;
+    margin: 0 2.5%;
+  }
+}
+
+// Forms
+.fc-form-group {
+  position: relative;
+  margin: 20px 0;
+
+  &-half {
+    width: 100%;
+
+    @media (min-width: 992px) {
+      width: 49%;
+    }
+  }
+
+  &-full {
+    width: 100%;
+  }
+}
+
+.fc-error {
+  border: 4px solid $fc-red !important;
+}
+
+.fc-error-msg {
+  font-size: 12px;
+  text-align: right;
+  position: absolute;
+  color: $white;
+  top: -20px;
+  right: 5px;
+}
+
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="tel"],
+  &[type="password"] {
+    width: 100%;
+    border-radius: 0;
+    font-family: $main-font;
+    font-style: italic;
+    font-size: 16px;
+    padding: 18px;
+    background: $white;
+    outline: 0;
+    transition: border .5s, background .5s;
+    border: 4px solid $white;
+    box-sizing: border-box;
+
+    &:hover, &:focus, &:active {
+      background: $white;
+    }
+
+    &::placeholder {
+      color: $fc-light-grey;
+    }
+  }
+}
+
+select {
+  display: block;
+  font-family: $main-font;
+  font-style: italic;
+  font-size: 16px;
+  border: 4px solid $white;
+  border-radius: 0;
+  outline: 0;
+  width: 100%;
+  padding: 17px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='black'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+  background-size: 12px;
+  background-position: calc(100% - 20px) center;
+  background-repeat: no-repeat;
+  background-color: $white;
+  box-sizing: border-box;
+
+  &:required:invalid {
+    color: lighten($fc-light-grey, 20%);
+  }
+
+  option {
+    color: $black;
+  }
+}
+
+.fc-base-btn {
+  width: auto;
+  padding: 18px;
+  display: inline-block;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all .4s;
+  position: relative;
+  vertical-align: middle;
+  border: 0;
+}
+
+.fc-red-btn {
+  width: 100%;
+  background-color: $fc-red;
+  font-family: $main-font;
+  font-weight: 700;
+  font-size: 20px;
+  color: $white;
+  border-radius: 5px;
+
+  &:hover,
+  &:active {
+    background-color: lighten( $fc-red, 10% );
+    color: $white;
+  }
+}
+
+
+.fc-arrow-icon-right {
+  display: inline-block;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='white'><polygon points='100,50 0,100 0,0'/></svg>") no-repeat;
+  background-size: 6px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+}
+
+// Typography
+
+body {
+  color: $black;
+  font-family: $main-font;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 10vw;
+  font-weight: 700;
+  color: $white;
+
+  @media (min-width: 992px) {
+    font-size: 65px;
+  }
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8vw;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 40px;
+
+  @media (min-width: 992px) {
+    font-size: 35px;
+  }
+}
+
+.fc-heading-flair::after {
+  border-bottom: 10px solid $fc-red;
+  content: "";
+  height: 40px;
+  display: block;
+  max-width: 300px;
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: 20px;
+  font-family: $main-font;
+  color: white;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+}
+
+.fc-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 20px;
+
+  div {
+    position: absolute;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+    &:nth-child(1) {
+      left: 6px;
+      animation: fc-ellipsis1 0.6s infinite;
+    }
+
+    &:nth-child(2) {
+      left: 6px;
+      animation: fc-ellipsis2 0.6s infinite;
+    }
+
+    &:nth-child(3) {
+      left: 26px;
+      animation: fc-ellipsis2 0.6s infinite;
+    }
+
+    &:nth-child(4) {
+      left: 45px;
+      animation: fc-ellipsis3 0.6s infinite;
+    }
+  }
+}
+
+@keyframes fc-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fc-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes fc-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(19px, 0);
+  }
+}
