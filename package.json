@@ -42,7 +42,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "stylelint-config-sass-guidelines": "^6.0.0"
   }
 }
